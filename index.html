@@ -4,18 +4,16 @@
     <meta charset="utf-8">
     <title>Weather Map</title>
     <script src="angular.js"></script>
+    <script src="angular-route.js"></script>
     <script src="weathermap.js"></script>
     <link rel="stylesheet" href="weathermap.css" media="screen" title="no title" charset="utf-8">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtxY38dIbtxwoM11-vxvqOsFVDadzWSZI"></script>
 
 
   </head>
-  <body ng-app="my-app" ng-controller="MainController">
+  <body ng-app="my-app">
     <div id="map">
     </div>
-    <div id="sidebar">
-      <p ng-click="openInfoWindow(result)" ng-repeat="result in results">{{result.name}} <img ng-src="http://openweathermap.org/img/w/{{result.weather[0].icon}}.png"/></br>Temperature: {{result.main.temp}} °F</p>
-
-    </div>
+    <ng-view></ng-view>
   </body>
 </html>
